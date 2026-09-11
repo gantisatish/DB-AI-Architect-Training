@@ -2,25 +2,34 @@
 
 A static, self-contained reader for the 12-week Databricks (Azure) Architect + Claude Certified Architect (CCA-F) training programme. No login, no backend, no build step — `index.html` is the entire site.
 
-## Publish it on GitHub Pages (~5 minutes, no installs)
+## 🔗 Live site
 
-1. Go to **github.com** → **+** (top right) → **New repository**. Name it anything (e.g. `architect-training`). Keep it **Public** (Pages needs a public repo on a free account). Don't add a README/gitignore — leave it empty. Create it.
-2. On the new repo's page, click **uploading an existing file**.
-3. Drag in `index.html` and `.nojekyll` from this folder (yes, the dot-file too — show hidden files in your file explorer if you don't see it). Commit.
-4. Go to **Settings** → **Pages** (left sidebar). Under **Build and deployment**, set **Source** to **Deploy from a branch**, branch **main**, folder **/ (root)**. Save.
-5. Wait ~1 minute, then refresh that Settings → Pages screen — it'll show your live URL: `https://<your-username>.github.io/<repo-name>/`.
+**https://gantisatish.github.io/DB-AI-Architect-Training/**
 
-That URL works from anywhere, on any account, with no Claude login — including your office machine.
+Works from anywhere, on any account, with no Claude login — including your office machine. Bookmark it.
 
 ## Updating it later
 
-If the course content changes, regenerate with:
+If the course content changes, regenerate and push:
 
 ```bash
-python build_site.py
+python build_site.py     # reads ../architect-certs-12week/, writes a fresh index.html
+git add index.html
+git commit -m "Update course content"
+git push
 ```
 
-(reads from `../architect-certs-12week/`, writes a fresh `index.html`), then re-upload that one file to the same repo (**Add file → Upload files** on the repo page) and commit — Pages redeploys automatically in about a minute.
+Pages redeploys automatically in about a minute — refresh the live link above once it's done.
+
+<details>
+<summary>First-time setup steps (already done for this repo — kept here for reference)</summary>
+
+1. Create a new **public** GitHub repo.
+2. Upload `index.html` and `.nojekyll` (the dot-file too — show hidden files in your file explorer if you don't see it).
+3. **Settings → Pages** → Source: **Deploy from a branch**, branch **main**, folder **/ (root)**. Save.
+4. Wait ~1 minute — the live URL appears on that same Settings → Pages screen.
+
+</details>
 
 ## What's in here
 
